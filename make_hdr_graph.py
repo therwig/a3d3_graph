@@ -6,7 +6,7 @@ import numpy as np
 
 labels = ['LHC L1T', 'DUNE', 'IceCube', 'LHCb', 'XENON']
 x = np.array([10e-6, 1e-3, 1, 1000, 60]) # latency [s]
-y = np.array([100e12, 1e12, 20e6, 5e12,  500e6 ]) # throughput [1/s]
+y = np.array([100e12, 1e12, 20e6, 5e12,  500e6 ]) # throughput [B/s]
 z = np.array([1e6, 50e12, 6e12, 20e15, 50e12]) # buffering [B]
 w = np.array([300e15, 30e15, 300e12, 100e15, 2e15]) # accumulated data volume [B/yr]
 
