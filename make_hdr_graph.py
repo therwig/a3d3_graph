@@ -10,7 +10,7 @@ def nonlinear(x):
     #return 1e-4*np.power(x,1/2)
 
 labels = ['LHC L1T', 'DUNE', 'IceCube', 'XENON', 'Neuro', 'LIGO', 'ZTF', 'Netflix 4K UHD', 'Google Cloud', 'LHC HLT']
-x = np.array([10e-6, 1e-3, 1, 60, 1e-3, 10e-3, 10, 10, 5, 200e-3,]) # latency [s]
+x = np.array([10e-6, 1e-3, 1, 60, 1e-3, 1e-1, 10, 10, 5, 200e-3,]) # latency [s]
 y = np.array([100e12, 1e12, 20e6, 500e6, 20e6, 32e6, 60e6, 2e6, 1e12,  5e12]) # throughput [B/s]
 w = np.array([300e18, 30e15, 300e12, 2e15, 1e15, 1e15, 680e12, 60e12, 1e18, 300e15]) # accumulated data volume [B/yr]
 
@@ -36,7 +36,7 @@ for xi, yi, wi, l, c in zip(x, y, w, labels, colors):
     elif l=='Neuro':
         ax.text(xi*0.006, yi*2, l, color=c)
     elif l=='LIGO':
-        ax.text(xi*0.2, yi*6, l, color=c)
+        ax.text(xi*0.1, yi*6, l, color=c)
     elif l=='LHC L1T':
         ax.text(xi*0.01, yi*0.0003, l, color=c)
     elif l=='ZTF':
@@ -80,5 +80,6 @@ ax.set_xlabel('Latency requirement [s]')
 ax.set_ylabel('Streaming data rate [B/s]')
 #hep.cms.label(loc=0)
 
+plt.tight_layout()
 plt.savefig('hdr_graph.pdf')
 plt.savefig('hdr_graph.png')
