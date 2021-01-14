@@ -9,11 +9,11 @@ def nonlinear(x):
     return 6e-5*np.power(np.log10(x),5)
     #return 1e-4*np.power(x,1/2)
 
-labels = ['LHC L1T', 'DUNE', 'IceCube', 'LHC HLT', 'XENON', 'Neuro']
-x = np.array([10e-6, 1e-3, 1, 200e-3, 60, 1e-3]) # latency [s]
-y = np.array([100e12, 1e12, 20e6, 5e12,  500e6, 20e6]) # throughput [B/s]
+labels = ['LHC L1T', 'DUNE', 'IceCube', 'LHC HLT', 'XENON', 'Neuro', 'LIGO']
+x = np.array([10e-6, 1e-3, 1, 200e-3, 60, 1e-3, 1e-3]) # latency [s]
+y = np.array([100e12, 1e12, 20e6, 5e12,  500e6, 20e6, 26e6]) # throughput [B/s]
 #z = np.array([1e6, 50e12, 6e12, 20e15, 50e12]) # buffering [B]
-w = np.array([300e15, 30e15, 300e12, 300e15, 2e15, 0.5e12]) # accumulated data volume [B/yr]
+w = np.array([300e15, 30e15, 300e12, 300e15, 2e15, 1e12]) # accumulated data volume [B/yr]
 
 plt.style.use([hep.style.ROOT, hep.style.firamath])
 #hep.set_style("CMS")
