@@ -23,12 +23,13 @@ plt.style.use([hep.style.ROOT, hep.style.firamath])
 
 f, ax = plt.subplots()
 for xi, yi, wi, l, c in zip(x, y, w, labels, colors):
+    if l=='XENON': continue
     ax.plot([xi], [yi], label=l, marker='o', markersize=nonlinear(wi), color=c)
     ax.plot([xi], [yi], label=l, marker='*', markersize=10, color='white')
     if l=='LHC HLT':
         ax.text(xi*0.1, yi*30, l, color=c)
     elif l=='IceCube':
-        ax.text(xi*3, yi*0.3, l, color=c)
+        ax.text(xi*0.01, yi*0.06, l, color=c)
     elif l=='XENON':
         ax.text(xi*0.1, yi*10, l, color=c)
     elif l=='DUNE':
@@ -40,7 +41,7 @@ for xi, yi, wi, l, c in zip(x, y, w, labels, colors):
     elif l=='LHC L1T':
         ax.text(xi*0.01, yi*0.0003, l, color=c)
     elif l=='ZTF':
-        ax.text(xi*0.08, yi*5, l, color=c)
+        ax.text(xi*0.4, yi*5, l, color=c)
     elif l=='Netflix 4K UHD':
         ax.text(xi*3, yi*0.5, l, color=c)
     elif l=='Google Cloud':
