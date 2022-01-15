@@ -6,5 +6,5 @@ conda activate a3d3
 ```
 
 ```
-python make_hdr_graph.py
+python make_sciml_graph.py
 ```
