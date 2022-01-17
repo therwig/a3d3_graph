@@ -10,7 +10,7 @@ import math
 input_dict = {
     "LHC L1T": [32 * 40e6, 32 * 40e6, 100e-9, 10e-6],
     "LHC on Det.": [48 * 40e6, 48 * 40e6, 10e-9, 100e-9],
-    "Accel. Control": [3e3 * 15, 3e3 * 15, 1e-3, 5e-3],
+    "Accel. Control": [3e3 * 15, 3e3 * 15, 100e-6, 5e-3],
     "MLPerf Tiny (IC)": [3e3 / 100e-3, 3e3 / 1e-3, 1e-3, 100e-3],
     "MLPerf Mobile (NLP)": [1e3 / 100e-3, 1e3 / 40e-3, 40e-3, 100e-3],
 }
@@ -53,7 +53,7 @@ for xloi, xhii, yloi, yhii, l, c in zip(xlo, xhi, ylo, yhi, labels, colors):
     if "Mobile" in l:
         ax.text(xi / 10, yi / 4, l, color=c)
     elif "Accel" in l:
-        ax.text(xi / 5e4, yi / 1.3, l, color=c)
+        ax.text(xi / 1e5, yi / 1.3, l, color=c)
     elif "L1T" in l:
         ax.text(xi * 10, yi / 4, l, color=c)
     else:
