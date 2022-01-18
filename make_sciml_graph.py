@@ -8,9 +8,9 @@ import math
 
 # label: data rate lower bound [B/s], data rate upper bound [B/s], latency lower bound [s], latency upper bound [s]
 input_dict = {
-    "FastML (Jet Class.)": [32 * 40e6, 32 * 40e6, 100e-9, 10e-6],
-    "FastML (Sensor Data Comp.)": [48 * 40e6, 48 * 40e6, 10e-9, 100e-9],
-    "FastML (Beam Control)": [3e3 * 15, 3e3 * 15, 100e-6, 5e-3],
+    "Jet Classification": [32 * 40e6, 32 * 40e6, 100e-9, 10e-6],
+    "Sensor Data Compression": [48 * 40e6, 48 * 40e6, 10e-9, 100e-9],
+    "Beam Control": [3e3 * 15, 3e3 * 15, 100e-6, 5e-3],
     "MLPerf Tiny (IC)": [3e3 / 100e-3, 3e3 / 1e-3, 1e-3, 100e-3],
     "MLPerf Mobile (NLP)": [1e3 / 100e-3, 1e3 / 40e-3, 40e-3, 100e-3],
 }
@@ -35,7 +35,19 @@ colors = [
 
 plt.style.use([hep.style.ROOT, hep.style.firamath])
 
+ymin = 1e2
+ymax = 1e11
+xmin = 1e-9
+xmax = 1e5
+
+
 f, ax = plt.subplots()
+# FastML contour
+ax.text(2e-9, 2e10, "FastML Science", color="gray", style="italic", weight="bold")
+box_y = np.array([3e3 * 15, 3e3 * 15, ymax, ymax])
+box_x = np.array([xmin, 5e-3, 5e-3, xmin])
+ax.fill(box_x, box_y, "gray", alpha=0.2)
+
 for xloi, xhii, yloi, yhii, l, c in zip(xlo, xhi, ylo, yhi, labels, colors):
     yi = math.sqrt(yloi * yhii)
     xi = math.sqrt(xloi * xhii)
@@ -58,12 +70,6 @@ for xloi, xhii, yloi, yhii, l, c in zip(xlo, xhi, ylo, yhi, labels, colors):
         ax.text(xi * 10, yi / 4, l, color=c)
     else:
         ax.text(xi * 2, yi * 2, l, color=c)
-
-ymin = 1e2
-ymax = 1e11
-xmin = 1e-9
-xmax = 1e5
-
 
 ax.loglog()
 ax.set_xlim(xmin, xmax)
