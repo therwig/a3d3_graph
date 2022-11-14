@@ -7,6 +7,7 @@ message: >-
   If you use this software, please cite it using the
   metadata from this file.
 type: software
+url: https://github.com/jmduarte/a3d3_graph
 authors:
   - given-names: Javier Mauricio
     family-names: Duarte
