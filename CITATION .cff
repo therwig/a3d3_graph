@@ -1,0 +1,15 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: A3D3 Graph
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Javier Mauricio
+    family-names: Duarte
+    email: jduarte@ucsd.edu
+    affiliation: UC San Diego
+    orcid: 'https://orcid.org/0000-0002-5076-7096'
