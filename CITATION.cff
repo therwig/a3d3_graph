@@ -8,6 +8,7 @@ message: >-
   metadata from this file.
 type: software
 url: https://github.com/jmduarte/a3d3_graph
+license: 'Apache-2.0'
 authors:
   - given-names: Javier Mauricio
     family-names: Duarte
