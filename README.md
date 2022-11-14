@@ -1,4 +1,5 @@
 # a3d3_graph
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7317426.svg)](https://doi.org/10.5281/zenodo.7317426)
 
 Instructions:
 ```bash
